@@ -9,7 +9,23 @@ import useStyles from "./style.js";
 const Map = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(min-width:600px)");
-  return <div>Map</div>;
+
+  const coordinates = { lat: 0, lon: 0 };
+
+  return (
+    <div className={classes.mapContainer}>
+      <googleMapReact
+        bootstrapURLKeys={{ key: "" }}
+        defaultCenter={coordinates}
+        center={coordinates}
+        defaultZoom={14}
+        margin={[50, 50, 50, 50]}
+        options={""}
+        onChange={""}
+        onChildClick={""}
+      ></googleMapReact>
+    </div>
+  );
 };
 
 export default Map;
